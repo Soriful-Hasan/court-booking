@@ -1,4 +1,4 @@
-import { User } from "lucide-react";
+import { ChevronsUpDown, User } from "lucide-react";
 import React from "react";
 
 export default function Navbar() {
@@ -33,8 +33,8 @@ export default function Navbar() {
               <h5>User Name</h5>
               <p className="text-primary font-semibold">User Role</p>
             </div>
-            <div className="">
-              
+            <div className="flex  items-center">
+              <ChevronsUpDown />
             </div>
           </div>
         </div>
