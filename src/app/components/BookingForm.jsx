@@ -14,6 +14,7 @@ import { Input } from "@/components/ui/input";
 import { Plus } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
+import { DrawerClose } from "@/components/ui/drawer";
 
 export default function BookingForm() {
   const [hours, setHours] = useState(new Date().getHours());
@@ -21,7 +22,7 @@ export default function BookingForm() {
     setHours(new Date().getHours());
   }, []);
   return (
-    <div className="w-full max-w-lg mx-auto bg-white p-6">
+    <div className="w-full  mx-auto bg-white p-6">
       <div className="space-y-5">
         {/* Created By */}
         <div className="space-y-3">
@@ -33,13 +34,14 @@ export default function BookingForm() {
           </Label>
           <Select className="">
             <SelectTrigger className="w-full rounded-full py-5 shadow-none">
-              <SelectValue placeholder="Select a fruit" />
+              <SelectValue placeholder="Ex: test@padelmates.se" />
             </SelectTrigger>
             <SelectContent>
               <SelectGroup>
                 <SelectLabel>Fruits</SelectLabel>
-                <SelectItem value="apple">Apple</SelectItem>
-                <SelectItem value="banana">Banana</SelectItem>
+                <SelectItem value="test@padelmates.se">
+                  test@padelmates.se
+                </SelectItem>
               </SelectGroup>
             </SelectContent>
           </Select>
@@ -89,6 +91,7 @@ export default function BookingForm() {
             </Select>
           </div>
         </div>
+
         {/* chose activity */}
         <div className="">
           <div className="w-full space-y-2">
@@ -100,13 +103,13 @@ export default function BookingForm() {
             </Label>
             <Select>
               <SelectTrigger className="w-full shadow-none  rounded-full py-5 shadow-0">
-                <SelectValue placeholder=" Chose Activity" />
+                <SelectValue placeholder="Select Activity" />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
                   <SelectLabel>Chose Activity</SelectLabel>
-                  <SelectItem value="9:00 PM">9:00 PM</SelectItem>
-                  <SelectItem value="9:00 PM">6:00 PM</SelectItem>
+                  <SelectItem value="Activity 1">Activity 1</SelectItem>
+                  <SelectItem value="Activity 2">Activity 2</SelectItem>
                 </SelectGroup>
               </SelectContent>
             </Select>
@@ -122,7 +125,7 @@ export default function BookingForm() {
           {/* Icon/Button on the right */}
           <button
             type="button "
-            className="rounded-full p-1 bg-secondary absolute right-3 top-1/2 -translate-y-1/2 text-primary hover:text-secondary"
+            className="rounded-full cursor-pointer p-1 bg-secondary absolute right-3 top-1/2 -translate-y-1/2 text-primary "
           >
             <Plus size={20} />
           </button>
@@ -132,7 +135,7 @@ export default function BookingForm() {
         <div className="w-full space-y-2 relative">
           <Input
             className="w-full rounded-full  py-5 pr-12 shadow-none"
-            placeholder="Add Players"
+            value="Recurrent Activity ?"
           />
           {/* Icon/Button on the right */}
           <Switch className=" absolute right-3 top-1/2 -translate-y-1/2 " />
@@ -149,13 +152,13 @@ export default function BookingForm() {
             </Label>
             <Select>
               <SelectTrigger className="w-full shadow-none  rounded-full py-5 shadow-0">
-                <SelectValue placeholder=" Chose Activity" />
+                <SelectValue placeholder="Select Court" />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
                   <SelectLabel>Chose Activity</SelectLabel>
-                  <SelectItem value="9:00 PM">9:00 PM</SelectItem>
-                  <SelectItem value="9:00 PM">6:00 PM</SelectItem>
+                  <SelectItem value="Court 1">Court 1</SelectItem>
+                  <SelectItem value="Court 2">Court 2</SelectItem>
                 </SelectGroup>
               </SelectContent>
             </Select>
@@ -172,7 +175,7 @@ export default function BookingForm() {
         </div>
 
         {/* Cancellation Time and Door Code */}
-        <div className="flex w-full gap-8">
+        <div className="flex w-full gap-8 items-center">
           {/* Cancellation time */}
           <div className="w-full space-y-2">
             <Label
@@ -183,7 +186,7 @@ export default function BookingForm() {
               <span className="text-secondary">*</span>
             </Label>
 
-            <div className="flex items-center justify-between border rounded-full px-3 py-2 w-full">
+            <div className="flex py-1 items-center justify-between border rounded-full  w-full">
               <Button
                 variant="ghost"
                 size="icon"
@@ -192,7 +195,7 @@ export default function BookingForm() {
                 –
               </Button>
 
-              <span className="text-lg font-medium">{hours}</span>
+              <span className="text-sm font-medium">2</span>
 
               <Button
                 variant="ghost"
@@ -283,9 +286,11 @@ export default function BookingForm() {
 
         {/* action button */}
         <div className="flex mt-10 justify-between items-center">
-          <Button className="px-12 hover:bg-gray-300 cursor-pointer bg-gray-200/90 text-black py-5 rounded-full">
-            Cancel
-          </Button>
+          <DrawerClose asChild>
+            <Button className="px-12 hover:bg-gray-300 cursor-pointer bg-gray-200/90 text-black py-5 rounded-full">
+              Cancel
+            </Button>
+          </DrawerClose>
           <Button className="px-8 cursor-pointer hover:bg-secondary/50 py-5 rounded-full bg-secondary text-black">
             Book Court
           </Button>

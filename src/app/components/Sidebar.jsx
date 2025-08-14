@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Sidebar() {
   return (
-    <div className=" bg-[#0000001A] w-2/20 h-screen flex flex-col justify-between">
+    <div className=" bg-[#0000001A] w-4/20 xl:w-3/20 2xl:w-2/20  h-screen flex flex-col justify-between">
       {/* logo and booking button  */}
       <div className="mt-15 space-y-6">
         <div className="flex justify-center">

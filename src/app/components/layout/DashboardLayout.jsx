@@ -24,11 +24,25 @@ export default function DashboardLayout({ children }) {
         <section className="flex justify-end p-10">
           <Drawer direction="right">
             <DrawerTrigger asChild>
-              <Button className='rounded-full cursor-pointer'>Create Activity</Button>
+              <Button className="rounded-full cursor-pointer">
+                Create Activity
+              </Button>
             </DrawerTrigger>
-            <DrawerContent>
+            <DrawerContent
+              className="
+          data-[vaul-drawer-direction=right]:inset-y-0 
+          data-[vaul-drawer-direction=right]:right-0 
+          data-[vaul-drawer-direction=right]:h-full 
+          data-[vaul-drawer-direction=right]:w-full
+          sm:data-[vaul-drawer-direction=right]:w-3/4 
+          md:data-[vaul-drawer-direction=right]:w-1/2 
+          lg:data-[vaul-drawer-direction=right]:w-[400px] 
+          xl:data-[vaul-drawer-direction=right]:w-[500px] 
+          data-[vaul-drawer-direction=right]:border-l
+        "
+            >
               <DrawerHeader className="!flex !flex-row !items-start !justify-between">
-                <div className="flex flex-col">
+                <div className="flex items-end gap-2 ">
                   <DrawerTitle className="text-primary text-xl font-bold">
                     Book Court,
                   </DrawerTitle>
@@ -36,14 +50,11 @@ export default function DashboardLayout({ children }) {
                     Wed Jul 30, 2025
                   </DrawerDescription>
                 </div>
+
                 <DrawerClose>
-                  {/* <Button
-                    className="bg-secondary/10 text-primary font-extrabold cursor-pointer"
-                    variant="ghost"
-                    size="icon"
-                  >
+                  <span className="bg-secondary/10 w-8 h-8 flex items-center justify-center rounded-full text-primary font-extrabold cursor-pointer">
                     ✕
-                  </Button> */}
+                  </span>
                 </DrawerClose>
               </DrawerHeader>
               <div className="">
