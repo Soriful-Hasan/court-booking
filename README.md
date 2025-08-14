@@ -4,9 +4,6 @@ This project implements a **right-side sliding panel** (Drawer UI pattern) based
 When the **"Create Activity"** button is clicked, a panel slides in from the right side of the screen containing a form exactly as shown in the design.
 
 ## 📌 Features
-- **Right-side sliding panel** (Drawer)
-- Matches Figma design closely
-- Form rendered exactly as per design
 - Consistent styling for small laptop, medium, and large screens
 - Modular, clean, and reusable code
 - Built with **Next.js**, **Tailwind CSS**, and **Shadcn**
