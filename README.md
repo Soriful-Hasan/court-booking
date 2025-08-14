@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Create Activity Panel - Next.js + Tailwind CSS + Shadcn
 
-## Getting Started
+This project implements a **right-side sliding panel** (Drawer UI pattern) based on the provided Figma design.  
+When the **"Create Activity"** button is clicked, a panel slides in from the right side of the screen containing a form exactly as shown in the design.
 
-First, run the development server:
+## 📌 Features
+- **Right-side sliding panel** (Drawer)
+- Matches Figma design closely
+- Form rendered exactly as per design
+- Consistent styling for small laptop, medium, and large screens
+- Modular, clean, and reusable code
+- Built with **Next.js**, **Tailwind CSS**, and **Shadcn**
 
+---
+
+## 🛠 Tech Stack
+- [Next.js (Latest)](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Shadcn UI](https://ui.shadcn.com/)
+
+---
+
+## 🎯 Implementation Details
+- The UI pattern implemented is a **Right Drawer / Slide-over Panel**.
+- Clicking the **"Create Activity"** button triggers the drawer to slide in from the right.
+- Inside the drawer, the form follows the exact layout and style from the Figma design.
+- Optimized for **small laptop, medium, and large screens**.
+- Not optimized for tablet or mobile devices.
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone the Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+git clone https://github.com/Soriful-Hasan/court-booking
+cd court-booking
