@@ -45,8 +45,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* --background: #0a0a0a;
-    --foreground: #ededed; */
+    --background: #0a0a0a;
+    --foreground: #ededed;
   }
 }
 
@@ -60,7 +60,7 @@
   --popover-foreground: oklch(0.145 0 0);
   --primary: #10715a;
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: #6e737a;
+  --secondary: #03f181;
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
@@ -126,27 +126,4 @@
   body {
     @apply bg-background text-foreground;
   }
-}
-
-@keyframes slideInFromRight {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-@keyframes slideOutToRight {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(100%);
-  }
-}
-.drawer-side-open {
-  animation: slideInFromRight 0.3s ease-out forwards;
-}
-.drawer-side-close {
-  animation: slideOutToRight 0.3s ease-in forwards;
 }

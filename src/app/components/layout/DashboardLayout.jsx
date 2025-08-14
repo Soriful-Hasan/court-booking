@@ -2,7 +2,7 @@
 import React from "react";
 import Sidebar from "../Sidebar";
 import Navbar from "../Navbar";
-import { useState } from "react";
+import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Drawer,
@@ -14,34 +14,42 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-
+import BookingForm from "../BookingForm";
 export default function DashboardLayout({ children }) {
- 
   return (
     <div className="flex">
       <Sidebar />
       <div className="flex-1 flex flex-col">
         <Navbar />
-        
         <section className="flex justify-end p-10">
-          {/* <DrawerLayout isOpen={isOpen} setIsOpen={setIsOpen}></DrawerLayout> */}
           <Drawer direction="right">
             <DrawerTrigger asChild>
               <Button>Create Activity</Button>
             </DrawerTrigger>
             <DrawerContent>
-              <DrawerHeader>
-                <DrawerTitle>Are you absolutely sure?</DrawerTitle>
-                <DrawerDescription>
-                  This action cannot be undone.
-                </DrawerDescription>
-              </DrawerHeader>
-              <DrawerFooter>
-                <Button>Submit</Button>
+              <DrawerHeader className="!flex !flex-row !items-start !justify-between">
+                <div className="flex flex-col">
+                  <DrawerTitle className="text-primary text-xl font-bold">
+                    Book Court,
+                  </DrawerTitle>
+                  <DrawerDescription className="text-primary">
+                    Wed Jul 30, 2025
+                  </DrawerDescription>
+                </div>
                 <DrawerClose>
-                  <Button variant="outline">Cancel</Button>
+                  <Button
+                    className="bg-secondary/10 text-primary font-extrabold cursor-pointer"
+                    variant="ghost"
+                    size="icon"
+                  >
+                    ✕
+                  </Button>
                 </DrawerClose>
-              </DrawerFooter>
+              </DrawerHeader>
+              <div className="">
+                <BookingForm />
+              </div>
+             
             </DrawerContent>
           </Drawer>
         </section>
