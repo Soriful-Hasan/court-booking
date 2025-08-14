@@ -24,7 +24,7 @@ export default function DashboardLayout({ children }) {
         <section className="flex justify-end p-10">
           <Drawer direction="right">
             <DrawerTrigger asChild>
-              <Button>Create Activity</Button>
+              <Button className='rounded-full cursor-pointer'>Create Activity</Button>
             </DrawerTrigger>
             <DrawerContent>
               <DrawerHeader className="!flex !flex-row !items-start !justify-between">
@@ -37,19 +37,18 @@ export default function DashboardLayout({ children }) {
                   </DrawerDescription>
                 </div>
                 <DrawerClose>
-                  <Button
+                  {/* <Button
                     className="bg-secondary/10 text-primary font-extrabold cursor-pointer"
                     variant="ghost"
                     size="icon"
                   >
                     ✕
-                  </Button>
+                  </Button> */}
                 </DrawerClose>
               </DrawerHeader>
               <div className="">
                 <BookingForm />
               </div>
-             
             </DrawerContent>
           </Drawer>
         </section>

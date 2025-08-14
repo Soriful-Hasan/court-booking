@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { Label } from "@/components/ui/label";
 import {
   Select,
@@ -15,6 +16,10 @@ import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
 
 export default function BookingForm() {
+  const [hours, setHours] = useState(new Date().getHours());
+  useEffect(() => {
+    setHours(new Date().getHours());
+  }, []);
   return (
     <div className="w-full max-w-lg mx-auto bg-white p-6">
       <div className="space-y-5">
@@ -171,23 +176,32 @@ export default function BookingForm() {
           {/* Cancellation time */}
           <div className="w-full space-y-2">
             <Label
-              htmlFor="created-by"
+              htmlFor="cancellation-time"
               className="text-sm font-medium text-gray-800"
             >
-              Cancellation Time <span className="text-secondary">*</span>
+              Cancellation Time (Hours)
+              <span className="text-secondary">*</span>
             </Label>
-            <Select>
-              <SelectTrigger className="w-full shadow-none  rounded-full py-5 shadow-0">
-                <SelectValue placeholder="Select Start Time" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectGroup>
-                  <SelectLabel>Time</SelectLabel>
-                  <SelectItem value="9:00 PM">9:00 PM</SelectItem>
-                  <SelectItem value="9:00 PM">6:00 PM</SelectItem>
-                </SelectGroup>
-              </SelectContent>
-            </Select>
+
+            <div className="flex items-center justify-between border rounded-full px-3 py-2 w-full">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full h-8 w-8"
+              >
+                –
+              </Button>
+
+              <span className="text-lg font-medium">{hours}</span>
+
+              <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full h-8 w-8"
+              >
+                +
+              </Button>
+            </div>
           </div>
           {/* End time */}
           <div className="w-full space-y-2">
@@ -195,7 +209,7 @@ export default function BookingForm() {
               htmlFor="created-by"
               className="text-sm font-medium text-gray-800"
             >
-              End Time <span className="text-secondary">*</span>
+              Door Code <span className="text-secondary">*</span>
             </Label>
             <Select>
               <SelectTrigger className="w-full shadow-none  rounded-full py-5 shadow-0">
@@ -213,48 +227,57 @@ export default function BookingForm() {
         </div>
 
         {/* Price and discount */}
-        <div className="flex w-full gap-8">
-          {/* Total Price */}
+        <div className="flex w-full gap-8  items-center">
           <div className="w-full space-y-2">
-            <Label
-              htmlFor="created-by"
-              className="text-sm font-medium text-gray-800"
-            >
-              Start Time <span className="text-secondary">*</span>
-            </Label>
-            <Select>
-              <SelectTrigger className="w-full shadow-none  rounded-full py-5 shadow-0">
-                <SelectValue placeholder="Select Start Time" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectGroup>
-                  <SelectLabel>Time</SelectLabel>
-                  <SelectItem value="9:00 PM">9:00 PM</SelectItem>
-                  <SelectItem value="9:00 PM">6:00 PM</SelectItem>
-                </SelectGroup>
-              </SelectContent>
-            </Select>
+            <div className="space-y-2">
+              <label className="text-sm font-medium">
+                Total price <span className="text-green-500">*</span>
+              </label>
+              <div className="flex items-center border rounded-full overflow-hidden">
+                {/* Currency Selector */}
+                <Select defaultValue="$">
+                  <SelectTrigger className="w-16 border-none focus:ring-0 focus:outline-none">
+                    <SelectValue placeholder="$" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="$">$</SelectItem>
+                    <SelectItem value="€">€</SelectItem>
+                    <SelectItem value="£">£</SelectItem>
+                  </SelectContent>
+                </Select>
+
+                {/* Number Input */}
+                <input
+                  type="number"
+                  defaultValue={0}
+                  className="w-full px-3 py-2 outline-none border-l focus:ring-0"
+                />
+              </div>
+            </div>
           </div>
-          {/* Discount */}
-          <div className="w-full space-y-2">
-            <Label
-              htmlFor="created-by"
-              className="text-sm font-medium text-gray-800"
-            >
-              End Time <span className="text-secondary">*</span>
-            </Label>
-            <Select>
-              <SelectTrigger className="w-full shadow-none  rounded-full py-5 shadow-0">
-                <SelectValue placeholder="Select End Time" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectGroup>
-                  <SelectLabel>Time</SelectLabel>
-                  <SelectItem value="9:00 PM">9:00 PM</SelectItem>
-                  <SelectItem value="9:00 PM">6:00 PM</SelectItem>
-                </SelectGroup>
-              </SelectContent>
-            </Select>
+          {/* End Time */}
+          <div className="space-y-3 w-full">
+            <label className="text-sm font-medium">
+              Discount <span className="text-green-500">*</span>
+            </label>
+            <div className="flex items-center border rounded-full overflow-hidden">
+              {/* Discount Selector */}
+              <Select defaultValue="%">
+                <SelectTrigger className=" border-none focus:ring-0 focus:outline-none">
+                  <SelectValue placeholder="%" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="%">%</SelectItem>
+                </SelectContent>
+              </Select>
+
+              {/* Number Input */}
+              <input
+                type="number"
+                defaultValue={0}
+                className="w-full px-3 py-2 outline-none border-l focus:ring-0"
+              />
+            </div>
           </div>
         </div>
 
