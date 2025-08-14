@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+
 import { Label } from "@/components/ui/label";
 import {
   Select,
@@ -17,10 +17,6 @@ import { Button } from "@/components/ui/button";
 import { DrawerClose } from "@/components/ui/drawer";
 
 export default function BookingForm() {
-  const [hours, setHours] = useState(new Date().getHours());
-  useEffect(() => {
-    setHours(new Date().getHours());
-  }, []);
   return (
     <div className="w-full  mx-auto bg-white p-6">
       <div className="space-y-5">
@@ -38,7 +34,7 @@ export default function BookingForm() {
             </SelectTrigger>
             <SelectContent>
               <SelectGroup>
-                <SelectLabel>Fruits</SelectLabel>
+                <SelectLabel>Select</SelectLabel>
                 <SelectItem value="test@padelmates.se">
                   test@padelmates.se
                 </SelectItem>
@@ -64,7 +60,6 @@ export default function BookingForm() {
                 <SelectGroup>
                   <SelectLabel>Time</SelectLabel>
                   <SelectItem value="9:00 PM">9:00 PM</SelectItem>
-                  <SelectItem value="9:00 PM">6:00 PM</SelectItem>
                 </SelectGroup>
               </SelectContent>
             </Select>
@@ -85,7 +80,7 @@ export default function BookingForm() {
                 <SelectGroup>
                   <SelectLabel>Time</SelectLabel>
                   <SelectItem value="9:00 PM">9:00 PM</SelectItem>
-                  <SelectItem value="9:00 PM">6:00 PM</SelectItem>
+                 
                 </SelectGroup>
               </SelectContent>
             </Select>
@@ -136,6 +131,7 @@ export default function BookingForm() {
           <Input
             className="w-full rounded-full  py-5 pr-12 shadow-none"
             value="Recurrent Activity ?"
+            readOnly
           />
           {/* Icon/Button on the right */}
           <Switch className=" absolute right-3 top-1/2 -translate-y-1/2 " />
@@ -222,7 +218,6 @@ export default function BookingForm() {
                 <SelectGroup>
                   <SelectLabel>Time</SelectLabel>
                   <SelectItem value="9:00 PM">9:00 PM</SelectItem>
-                  <SelectItem value="9:00 PM">6:00 PM</SelectItem>
                 </SelectGroup>
               </SelectContent>
             </Select>
@@ -258,7 +253,7 @@ export default function BookingForm() {
               </div>
             </div>
           </div>
-          {/* End Time */}
+
           <div className="space-y-3 w-full">
             <label className="text-sm font-medium">
               Discount <span className="text-green-500">*</span>

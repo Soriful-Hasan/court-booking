@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import Sidebar from "../Sidebar";
-import Navbar from "../Navbar";
+import Sidebar from "../../components/common/Sidebar";
+import Navbar from "../../components/common/Navbar";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,7 +14,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import BookingForm from "../BookingForm";
+import BookingForm from "./BookingForm";
 export default function DashboardLayout({ children }) {
   return (
     <div className="flex">
